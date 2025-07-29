@@ -1,8 +1,10 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  --app-width: min(1200px, 100% - 2rem);
 }
 
 @theme inline {
