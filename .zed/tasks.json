@@ -9,5 +9,38 @@
     "hide": "always",
     "shell": "system",
     "tags": ["next"]
+  },
+  {
+    "label": "test",
+    "command": "pn test",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false,
+    "reveal": "no_focus",
+    "reveal_target": "dock",
+    "hide": "always",
+    "shell": "system",
+    "tags": ["next", "testing"]
+  },
+  {
+    "label": "test:coverage",
+    "command": "pn test:coverage",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false,
+    "reveal": "no_focus",
+    "reveal_target": "dock",
+    "hide": "always",
+    "shell": "system",
+    "tags": ["next", "testing"]
+  },
+  {
+    "label": "test:ui",
+    "command": "pn test:ui",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false,
+    "reveal": "no_focus",
+    "reveal_target": "dock",
+    "hide": "always",
+    "shell": "system",
+    "tags": ["next", "testing"]
   }
 ]
