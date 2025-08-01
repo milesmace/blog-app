@@ -1,6 +1,6 @@
-import { configureStore } from '@reduxjs/toolkit';
-
 import { postsReducer } from '@/features';
+
+import { configureStore } from '@reduxjs/toolkit';
 
 export const makeStore = () =>
   configureStore({

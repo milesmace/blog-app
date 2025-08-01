@@ -1,5 +1,5 @@
 import { loadFromStorage, removeFromStorage, saveToStorage } from '@/utils';
-import * as nextUtils from '@/utils/next'
+import * as nextUtils from '@/utils/next';
 
 describe('Storage Utilities', () => {
   beforeEach(() => {

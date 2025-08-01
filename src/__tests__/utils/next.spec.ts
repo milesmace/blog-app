@@ -1,4 +1,4 @@
-import { isBrowser } from "@/utils";
+import { isBrowser } from '@/utils';
 
 describe('isBrowser', () => {
   it('returns true when called in a browser environment', () => {

@@ -1,4 +1,4 @@
-import { isBrowser } from './next'
+import { isBrowser } from './next';
 
 /**
  * Loads and parses a value from `localStorage` by the given key.
