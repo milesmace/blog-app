@@ -40,6 +40,8 @@ const postsSlice = createSlice({
       state.allIds.filter((id) => id !== action.payload);
       delete state.posts[action.payload];
     },
+
+    // TODO: Add reducers as required
   },
 });
 
