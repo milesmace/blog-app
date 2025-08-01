@@ -1,10 +1,10 @@
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+
 import { STORAGE } from '@/constants';
 import { Post, PostsStore } from '@/types';
 import { isBrowser, loadFromStorage } from '@/utils';
 
 import { PostsSliceState } from './postsSlice.types';
-
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 let initialState: PostsSliceState = {
   allIds: [1],
