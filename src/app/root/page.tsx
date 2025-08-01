@@ -1,10 +1,21 @@
-import { createClient } from '@/lib/supabase/server';
+'use client';
 
-const ProtectedPage = async () => {
-  const supabase = await createClient();
-  const { data } = await supabase.auth.getClaims();
+import { useEffect } from 'react';
 
-  return JSON.stringify(data);
+import { STORAGE } from '@/constants';
+import { PostsSliceState, selectPosts } from '@/features';
+import { useAppSelector } from '@/hooks';
+import { saveToStorage } from '@/utils';
+
+const ProtectedPage = () => {
+  const posts = useAppSelector(selectPosts);
+
+  useEffect(() => {
+    saveToStorage(STORAGE.POSTS_ALL_IDS, posts.allIds);
+    saveToStorage(STORAGE.POSTS_STORE, posts.posts);
+  }, []);
+
+  return JSON.stringify(posts);
 };
 
 export default ProtectedPage;

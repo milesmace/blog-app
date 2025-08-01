@@ -14,11 +14,13 @@
     "test:ui": "vitest --ui"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^2.8.2",
     "@supabase/ssr": "^0.6.1",
     "@supabase/supabase-js": "^2.52.1",
     "next": "15.3.5",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "react-redux": "^9.2.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
