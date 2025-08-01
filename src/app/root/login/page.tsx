@@ -1,8 +1,10 @@
 'use client';
 
-import { createClient } from '@/lib/supabase/client';
-import { SupabaseClient } from '@supabase/supabase-js';
 import { useEffect, useRef, useState } from 'react';
+
+import { SupabaseClient } from '@supabase/supabase-js';
+
+import { createClient } from '@/lib/supabase/client';
 
 const Login = () => {
   const [email, setEmail] = useState('');

@@ -45,3 +45,5 @@ next-env.d.ts
 .vscode/
 !.vscode/{settings,tasks}.json
 .idea/
+.zed/*
+!.zed/tasks.json

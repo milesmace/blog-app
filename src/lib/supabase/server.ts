@@ -1,5 +1,6 @@
-import { createServerClient } from "@supabase/ssr";
-import { cookies } from "next/headers";
+import { cookies } from 'next/headers';
+
+import { createServerClient } from '@supabase/ssr';
 
 /**
  * Especially important if using Fluid compute: Don't put this client in a
