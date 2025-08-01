@@ -1,8 +1,8 @@
 import { type NextRequest, NextResponse } from 'next/server';
 
-import { ROUTES } from '@/constants';
-
 import { createServerClient } from '@supabase/ssr';
+
+import { ROUTES } from '@/constants';
 
 export async function updateSession(request: NextRequest) {
   let supabaseResponse = NextResponse.next({

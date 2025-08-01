@@ -33,10 +33,16 @@ const eslintConfig = [
         'error',
         {
           groups: [
-            ['^react', '^react-dom', '^react-hook-form'],
-            ['^next', '^next/.*'],
+            // 1. React-related imports
+            ['^react'],
+            // 2. Next.js imports
+            ['^next'],
+            // 3. All other 3rd party libraries (including @-scoped packages)
+            ['^[a-z]', '^@[^/]'],
+            // 4. Internal imports using @/ alias
             ['^@/'],
-            ['^\\.', '^\\..*'],
+            // 5. Relative imports (sibling and parent)
+            ['^\\.'],
           ],
         },
       ],
