@@ -7,9 +7,17 @@ export default defineConfig({
     environment: 'jsdom',
     globals: true,
     setupFiles: ['./vitest.setup.ts'],
-    include: ['src/**/*.test.{ts,tsx}'],
+    include: ['src/**/*.{test,spec}.{ts,tsx}'],
     coverage: {
       reporter: ['text', 'json', 'html'],
+      exclude: [
+        '.next/',
+        'dist/',
+        'coverage/',
+        'src/{app,constants,lib/supabase,types,middleware.ts}/',
+        'src/{hooks/useStore.ts,store,features}',
+        '*config*.{ts,mts}',
+      ],
     },
   },
 });

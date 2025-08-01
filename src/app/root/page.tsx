@@ -3,7 +3,7 @@
 import { useEffect } from 'react';
 
 import { STORAGE } from '@/constants';
-import { PostsSliceState, selectPosts } from '@/features';
+import { selectPosts } from '@/features';
 import { useAppSelector } from '@/hooks';
 import { saveToStorage } from '@/utils';
 
@@ -13,7 +13,7 @@ const ProtectedPage = () => {
   useEffect(() => {
     saveToStorage(STORAGE.POSTS_ALL_IDS, posts.allIds);
     saveToStorage(STORAGE.POSTS_STORE, posts.posts);
-  }, []);
+  }, [posts.allIds, posts.posts]);
 
   return JSON.stringify(posts);
 };
