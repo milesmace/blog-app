@@ -1,6 +1,10 @@
 import type { Metadata } from 'next';
 import { Inter, JetBrains_Mono } from 'next/font/google';
 
+import { Footer } from '@/components/layout';
+
+import { Provider } from './Provider';
+
 import './globals.css';
 
 const inter = Inter({
@@ -24,9 +28,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${inter.variable} ${mono.variable} antialiased`}>
-        {children}
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={`${inter.variable} ${mono.variable} bg-background text-foreground antialiased`}
+      >
+        <Provider>
+          <div className="flex min-h-screen flex-col font-sans">
+            <div className="grow">{children}</div>
+
+            {/* Footer */}
+            <Footer />
+          </div>
+        </Provider>
       </body>
     </html>
   );
