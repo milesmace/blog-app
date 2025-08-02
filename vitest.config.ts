@@ -16,6 +16,7 @@ export default defineConfig({
         'coverage/',
         'src/{app,constants,lib/supabase,types,middleware.ts}/',
         'src/{hooks/useStore.ts,store,features}',
+        'src/components/ui/*.{ts,tsx}', // Shadcn components
         '*config*.{ts,mts}',
       ],
     },
