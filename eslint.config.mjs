@@ -5,6 +5,7 @@ import simpleImportSort from 'eslint-plugin-simple-import-sort';
 import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
 import jsxA11y from 'eslint-plugin-jsx-a11y';
+import unusedImports from 'eslint-plugin-unused-imports';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -27,6 +28,7 @@ const eslintConfig = [
       react,
       'react-hooks': reactHooks,
       'jsx-a11y': jsxA11y,
+      'unused-imports': unusedImports,
     },
     rules: {
       'simple-import-sort/imports': [
@@ -44,6 +46,16 @@ const eslintConfig = [
             // 5. Relative imports (sibling and parent)
             ['^\\.'],
           ],
+        },
+      ],
+      'unused-imports/no-unused-imports': 'error',
+      'unused-imports/no-unused-vars': [
+        'warn',
+        {
+          vars: 'all',
+          varsIgnorePattern: '^_',
+          args: 'after-used',
+          argsIgnorePattern: '^_',
         },
       ],
       'react/prop-types': 'off',
