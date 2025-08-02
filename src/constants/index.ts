@@ -1,3 +1,3 @@
 export { ROUTES } from './routes';
 export { STORAGE } from './storage';
-export { TABLES } from './supabase';
+export { COLUMNS, TABLES } from './supabase';

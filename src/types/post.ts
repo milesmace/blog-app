@@ -5,9 +5,12 @@ export type PostData = {
 
 export type PostMeta = {
   id: number;
+  post_uuid: string;
   slug?: string;
   cover_image?: string;
-  author_id?: string;
+  author_id: string;
+  status: boolean;
+  is_draft: boolean;
   published_at?: string;
   created_at?: string;
   updated_at?: string;
