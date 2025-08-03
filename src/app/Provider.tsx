@@ -2,10 +2,12 @@
 
 import { ThemeProvider } from 'next-themes';
 
+import { TooltipProvider } from '@/components/ui';
+
 export const Provider = ({ children }: { children: React.ReactNode }) => {
   return (
     <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-      {children}
+      <TooltipProvider>{children}</TooltipProvider>
     </ThemeProvider>
   );
 };
