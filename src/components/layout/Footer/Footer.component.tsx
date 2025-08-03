@@ -1,6 +1,6 @@
 'use client';
 
-import { ThemeContainer } from '@/containers';
+import { Logout, ThemeContainer } from '@/containers';
 
 export const Footer = () => {
   return (
@@ -8,7 +8,10 @@ export const Footer = () => {
       <div className="mx-auto flex max-w-[var(--app-width)] items-center justify-end">
         {/* Theme Switcher */}
 
-        <ThemeContainer />
+        <div className="flex gap-4">
+          <ThemeContainer />
+          <Logout />
+        </div>
       </div>
     </footer>
   );

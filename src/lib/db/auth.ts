@@ -4,13 +4,15 @@ export const login = async (
   supabase: SupabaseClient,
   email: string,
   password: string,
-): Promise<AuthError | boolean> => {
+): Promise<{ success: boolean; error: AuthError | null }> => {
   const { error } = await supabase.auth.signInWithPassword({ email, password });
-  return error ?? true;
+  return { success: !error, error };
 };
 
-export const logout = async (supabase: SupabaseClient): Promise<boolean> => {
+export const logout = async (
+  supabase: SupabaseClient,
+): Promise<{ success: boolean; error: AuthError | null }> => {
   const { error } = await supabase.auth.signOut();
 
-  return !error;
+  return { success: !error, error };
 };

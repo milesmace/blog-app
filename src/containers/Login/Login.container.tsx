@@ -52,10 +52,11 @@ export const Login = ({ className, ...props }: React.ComponentProps<'div'>) => {
   const onSubmit = async (data: LoginFormData) => {
     const supabase = createClient();
 
-    if ((await login(supabase, data.email, data.password)) === true) {
+    const { success, error } = await login(supabase, data.email, data.password);
+    if (success) {
       router.push(ROUTES.ROOT_ROUTE);
     } else {
-      setError('root', { message: 'Invalid email or password' });
+      setError('root', { message: error?.message });
     }
   };
 
