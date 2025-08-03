@@ -3,6 +3,10 @@
 
 @custom-variant dark (&:is(.dark *));
 
+* {
+  transition: background 150ms ease;
+}
+
 :root {
   --app-width: min(1024px, 100% - 2rem);
 
