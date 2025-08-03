@@ -25,8 +25,8 @@ import { cn, login } from '@/lib';
 import { createClient } from '@/lib/supabase/client';
 
 const schema = z.object({
-  email: z.email('Invalid email'),
-  password: z.string(), // No validation required, this is not signup
+  email: z.string().min(1, 'Email is required').email('Invalid email'),
+  password: z.string().min(1, 'Password is required'), // No validation required, this is not signup
 });
 
 type LoginFormData = z.infer<typeof schema>;
@@ -38,10 +38,6 @@ export const Login = ({ className, ...props }: React.ComponentProps<'div'>) => {
     formState: { errors, isSubmitting },
     setError,
   } = useForm<LoginFormData>({
-    defaultValues: {
-      email: '',
-      password: '',
-    },
     mode: 'onBlur',
     resolver: zodResolver(schema),
   });
@@ -74,27 +70,41 @@ export const Login = ({ className, ...props }: React.ComponentProps<'div'>) => {
             <div className="flex flex-col gap-6">
               <div className="grid gap-3">
                 <Label htmlFor="email">Email</Label>
-                <Input
-                  id="email"
-                  type="email"
-                  placeholder="m@example.com"
-                  required
-                  disabled={isSubmitting}
-                  {...register('email')}
-                />
+                <div>
+                  <Input
+                    id="email"
+                    type="email"
+                    placeholder="m@example.com"
+                    required
+                    disabled={isSubmitting}
+                    {...register('email')}
+                  />
+                  {errors.email && (
+                    <p className="mt-1 text-sm text-red-500">
+                      {errors.email.message}
+                    </p>
+                  )}
+                </div>
               </div>
 
               <div className="grid gap-3">
                 <Label htmlFor="password">Password</Label>
                 <div className="relative">
-                  <Input
-                    id="password"
-                    type={showPassword ? 'text' : 'password'}
-                    placeholder="•••••••"
-                    disabled={isSubmitting}
-                    required
-                    {...register('password')}
-                  />
+                  <div>
+                    <Input
+                      id="password"
+                      type={showPassword ? 'text' : 'password'}
+                      placeholder="•••••••"
+                      disabled={isSubmitting}
+                      required
+                      {...register('password')}
+                    />
+                    {errors.password && (
+                      <p className="mt-1 text-sm text-red-500">
+                        {errors.password.message}
+                      </p>
+                    )}
+                  </div>
                   <Button
                     variant="ghost"
                     type="button"
